@@ -1,0 +1,23 @@
+{
+  "name": "learningdeeplearn",
+  "version": "0.1.0",
+  "description": "browser convnet deeplearn assignment",
+  "main": "index.js",
+  "author": "Gregor Beyerle",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "ts-loader": "^3.1.1",
+    "typescript": "^2.6.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "deeplearn": "^0.3.7",
+    "deeplearn-squeezenet": "^0.1.2"
+  }
+}
