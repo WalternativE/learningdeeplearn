@@ -2,17 +2,31 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="css/index.css" />
   <title>Getting started</title>
 </head>
 
 <body>
-  <input type="url" name="image-url" id="image-url" value="img/panda_small.jpg"/>
-  <button id="url-update-button">Update</button>
-  <img src="img/panda_small.jpg" width="207px" height="207px" id="image-to-infer"/>
-  <canvas id="inference-canvas" width="207px" height="207px"/>
+  <div>
+    <div>
+      <p>
+        Be aware that the image URLs you use have to point to a resource which is served with CORS headers otherwise the update will fail. Wiki commons does that.
+      </p>
+      <input type="url" name="image-url" id="image-url" value="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Wien_-_Stephansdom_%283%29.JPG/220px-Wien_-_Stephansdom_%283%29.JPG"
+      />
+      <button id="url-update-button" disabled>Waiting for net to load</button>
+    </div>
+    <div>
+      <!-- TIL: img sources can have cross origin - if you don't set it processing imagedata will blow up in your face -->
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Wien_-_Stephansdom_%283%29.JPG/220px-Wien_-_Stephansdom_%283%29.JPG"
+        width="207px" height="207px" id="image-to-infer" crossorigin="anonymous" />
+      <canvas id="inference-canvas" width="207px" height="207px"></canvas>
+    </div>
+    <div id="classifier-target"></div>
+  </div>
   <script src="bundle.js"></script>
 </body>
 
